@@ -78,10 +78,10 @@ export function BlogsAndFaqSection() {
               Foundational AI Ecosystem Alliances:
             </span>
             <div className="flex flex-wrap items-center gap-4 sm:gap-8 opacity-80 text-xs font-semibold">
-              <a href="https://openai.com" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-purple-300 transition">⚡ OpenAI Ecosystem</a>
+              <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-purple-300 transition">⚡ OpenAI Ecosystem</a>
               <a href="https://deepmind.google" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-purple-300 transition">✦ Google DeepMind Cloud</a>
               <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-purple-300 transition">✶ Anthropic Research</a>
-              <a href="https://midjourney.com" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-purple-300 transition">🎨 Midjourney Guild</a>
+              <a href="https://docs.midjourney.com" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-purple-300 transition">🎨 Midjourney Guild</a>
               <a href="https://blackforestlabs.ai" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-purple-300 transition">🔬 Black Forest Labs</a>
               <a href="https://civitai.com" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-purple-300 transition">🌐 Civitai Network</a>
               <a href="https://flowgpt.com" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-purple-300 transition">🔥 FlowGPT Community</a>

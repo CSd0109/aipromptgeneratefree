@@ -286,6 +286,42 @@ export const SEO_PAGES: Record<string, SEOCategoryConfig> = {
       {
         q: "Are these ChatGPT prompts 100% free?",
         a: "Yes, every single prompt is free to copy and use commercially with zero login."
+      },
+      {
+        q: "What does OpenAI do?",
+        a: "OpenAI is an AI research and deployment company that creates multimodal intelligence models, including GPT-4o, o3-mini, and Codex."
+      },
+      {
+        q: "What is OpenAI and how does it work?",
+        a: "OpenAI builds advanced neural networks that understand and generate text, code, voice, and imagery based on natural language prompts."
+      },
+      {
+        q: "What OpenAI models are available via API?",
+        a: "Key models via API include GPT-4o, GPT-4o mini, o1, o3-mini, text-embedding-3, and DALL-E 3 for vision generation."
+      },
+      {
+        q: "What OpenAI models are available in Bedrock?",
+        a: "OpenAI models are hosted primarily on Microsoft Azure and OpenAI API; Amazon Bedrock hosts Anthropic Claude, Meta Llama, and Mistral."
+      },
+      {
+        q: "What OpenAI model is best for coding?",
+        a: "GPT-4o and o3-mini are currently the best OpenAI models for complex software architecture, debugging, and unit test generation."
+      },
+      {
+        q: "What can OpenAI Codex do?",
+        a: "OpenAI Codex interprets natural language commands and generates functional code across Python, JavaScript, TypeScript, and 12+ other languages."
+      },
+      {
+        q: "What OpenAI models are free?",
+        a: "Standard ChatGPT access with GPT-4o mini is free on the official web portal, and all engineered ChatGPT prompt templates on AIPromptGenerate are 100% free."
+      },
+      {
+        q: "What OpenAI models are open source?",
+        a: "OpenAI has open-sourced Whisper for speech recognition, CLIP for image-text representations, and the Point-E and Shap-E 3D synthesis models."
+      },
+      {
+        q: "How to get the most accurate results from OpenAI ChatGPT?",
+        a: "Use role definitions, clear task constraints, few-shot examples, and chain-of-thought instructions as provided in our free prompt library."
       }
     ]
   },

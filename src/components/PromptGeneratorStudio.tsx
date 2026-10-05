@@ -331,23 +331,29 @@ export function PromptGeneratorStudio({ compact = false }: PromptGeneratorStudio
     });
 
     Promise.all(readers).then((newImgs) => {
-      setUploadedImages((prev) => {
-        const combined = [...prev, ...newImgs];
-        if (combined.length > 0) {
-          setUploadedImage(combined[0].base64);
-          setUploadedFileName(combined[0].name);
-        }
-        return combined;
-      });
+      if (newImgs.length > 0) {
+        setUploadedImages((prev) => {
+          const combined = [...prev, ...newImgs];
+          if (combined.length > 0) {
+            setUploadedImage(combined[0].base64);
+            setUploadedFileName(combined[0].name);
+          }
+          return combined;
+        });
 
-      if (
-        selectedService.id !== "image-to-prompt" &&
-        selectedService.id !== "image-to-pdf" &&
-        selectedService.id !== "image-to-text" &&
-        selectedService.id !== "image-resizer"
-      ) {
-        const s = ALL_SERVICES_CATALOG.find((item) => item.id === "image-to-prompt");
-        if (s) setSelectedService(s);
+        // If user drops multiple images, automatically select Image to PDF Converter
+        if (newImgs.length > 1 && selectedService.id !== "image-to-pdf") {
+          const s = ALL_SERVICES_CATALOG.find((item) => item.id === "image-to-pdf");
+          if (s) setSelectedService(s);
+        } else if (
+          selectedService.id !== "image-to-prompt" &&
+          selectedService.id !== "image-to-pdf" &&
+          selectedService.id !== "image-to-text" &&
+          selectedService.id !== "image-resizer"
+        ) {
+          const s = ALL_SERVICES_CATALOG.find((item) => item.id === "image-to-prompt");
+          if (s) setSelectedService(s);
+        }
       }
     });
   };
@@ -371,7 +377,13 @@ export function PromptGeneratorStudio({ compact = false }: PromptGeneratorStudio
 
   const handleGenerate = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    if (!inputTopic.trim() && !uploadedImage) return;
+    const hasImages = Boolean(uploadedImage || uploadedImages.length > 0);
+    if (!inputTopic.trim() && !hasImages) {
+      if (selectedService.id === "image-to-pdf") {
+        fileInputRef.current?.click();
+      }
+      return;
+    }
 
     setIsLoading(true);
     setProgress(5);
@@ -408,9 +420,13 @@ export function PromptGeneratorStudio({ compact = false }: PromptGeneratorStudio
         return;
       }
 
-      // CASE 2: Image to PDF Service (Powered by Nutrient.io High-Resolution Engine)
+      // CASE 2: Image to PDF Service (Powered by Nutrient.io + Instant Client-Side jsPDF Engine)
       if (selectedService.id === "image-to-pdf") {
-        const imgsToConvert = uploadedImages.length > 0 ? uploadedImages : uploadedImage ? [{ base64: uploadedImage, name: uploadedFileName || "image.jpg" }] : [];
+        const imgsToConvert = uploadedImages.length > 0 
+          ? uploadedImages 
+          : uploadedImage 
+          ? [{ base64: uploadedImage, name: uploadedFileName || "image.jpg" }] 
+          : [];
 
         if (imgsToConvert.length === 0) {
           clearInterval(progressInterval);
@@ -421,55 +437,109 @@ export function PromptGeneratorStudio({ compact = false }: PromptGeneratorStudio
           return;
         }
 
-        const safeName = (uploadedFileName?.replace(/\.[^/.]+$/, "") || "converted_document") + ".pdf";
+        const safeName = (
+          inputTopic.trim() 
+            ? inputTopic.trim().replace(/[^a-zA-Z0-9_-]/g, "_") 
+            : uploadedFileName?.replace(/\.[^/.]+$/, "") || "converted_document"
+        ) + ".pdf";
+
         let downloadUrl: string | null = null;
         let engineUsed = "Nutrient.io DWS Engine";
 
-        // 1. Try Nutrient.io API route with all images
-        try {
-          const nutrientRes = await fetch("/api/nutrient-pdf", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              images: imgsToConvert,
-              fileName: safeName,
-            }),
-          });
+        // Calculate total payload size
+        const totalSize = imgsToConvert.reduce((acc, curr) => acc + (curr.base64?.length || 0), 0);
 
-          if (nutrientRes.ok) {
-            const data = await nutrientRes.json();
-            if (data.pdfDataUri) {
-              downloadUrl = data.pdfDataUri;
+        // 1. If payload under 3.5MB, try Nutrient.io serverless API
+        if (totalSize < 3.5 * 1024 * 1024) {
+          try {
+            const nutrientRes = await fetch("/api/nutrient-pdf", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                images: imgsToConvert,
+                fileName: safeName,
+              }),
+            });
+
+            if (nutrientRes.ok) {
+              const data = await nutrientRes.json();
+              if (data.pdfDataUri) {
+                // Convert dataURI to Blob URL for clean browser downloading
+                const arr = data.pdfDataUri.split(",");
+                const mimeMatch = arr[0].match(/:(.*?);/);
+                const mime = mimeMatch ? mimeMatch[1] : "application/pdf";
+                const bstr = atob(arr[1]);
+                let n = bstr.length;
+                const u8arr = new Uint8Array(n);
+                while (n--) {
+                  u8arr[n] = bstr.charCodeAt(n);
+                }
+                const blob = new Blob([u8arr], { type: mime });
+                downloadUrl = URL.createObjectURL(blob);
+              }
             }
+          } catch (err) {
+            console.warn("Nutrient.io network error, switching to client jsPDF:", err);
           }
-        } catch (err) {
-          console.warn("Nutrient.io fallback:", err);
         }
 
-        // 2. Client-side jsPDF fallback (multi-page) if network or API fails
+        // 2. High-speed Client-side jsPDF fallback (multi-page guaranteed conversion)
         if (!downloadUrl) {
-          engineUsed = "High-Res Multi-Page PDF Engine";
+          engineUsed = "High-Res Client Multi-Page PDF Engine";
           const pdf = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
           const pageWidth = pdf.internal.pageSize.getWidth();
           const pageHeight = pdf.internal.pageSize.getHeight();
-          const margin = 15;
+          const margin = 10;
           const maxW = pageWidth - margin * 2;
-          const maxH = pageHeight - margin * 2 - 20;
+          const maxH = pageHeight - margin * 2 - 15;
 
-          imgsToConvert.forEach((item, index) => {
+          for (let index = 0; index < imgsToConvert.length; index++) {
             if (index > 0) pdf.addPage();
+            const item = imgsToConvert[index];
 
-            try {
-              pdf.addImage(item.base64, "JPEG", margin, margin + 10, maxW, maxH, undefined, "FAST");
-            } catch {
-              pdf.addImage(item.base64, "PNG", margin, margin + 10, maxW, maxH, undefined, "FAST");
-            }
+            // Wait for image dimensions to preserve aspect ratio
+            await new Promise<void>((resolve) => {
+              const tempImg = new Image();
+              tempImg.onload = () => {
+                const imgRatio = tempImg.naturalWidth / tempImg.naturalHeight;
+                let renderW = maxW;
+                let renderH = renderW / imgRatio;
+
+                if (renderH > maxH) {
+                  renderH = maxH;
+                  renderW = renderH * imgRatio;
+                }
+
+                const posX = margin + (maxW - renderW) / 2;
+                const posY = margin + 10 + (maxH - renderH) / 2;
+
+                try {
+                  pdf.addImage(item.base64, "JPEG", posX, posY, renderW, renderH, undefined, "FAST");
+                } catch {
+                  pdf.addImage(item.base64, "PNG", posX, posY, renderW, renderH, undefined, "FAST");
+                }
+                resolve();
+              };
+              tempImg.onerror = () => {
+                try {
+                  pdf.addImage(item.base64, "JPEG", margin, margin + 10, maxW, maxH, undefined, "FAST");
+                } catch {
+                  // Ignore
+                }
+                resolve();
+              };
+              tempImg.src = item.base64;
+            });
 
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(9);
-            pdf.setTextColor(100, 100, 100);
-            pdf.text(`Page ${index + 1} of ${imgsToConvert.length} • Converted with AI Prompt Generate`, margin, margin + 5);
-          });
+            pdf.setFontSize(8);
+            pdf.setTextColor(140, 140, 140);
+            pdf.text(
+              `Page ${index + 1} of ${imgsToConvert.length} • Generated with AI Prompt Generate`,
+              margin,
+              margin + 5
+            );
+          }
 
           const blob = pdf.output("blob");
           downloadUrl = URL.createObjectURL(blob);
@@ -481,8 +551,21 @@ export function PromptGeneratorStudio({ compact = false }: PromptGeneratorStudio
         setPdfDownloadUrl(downloadUrl);
         setPdfFileName(safeName);
         setResultData({
-          prompt: `✅ Professional Multi-Page PDF Created Successfully!\n• Engine: ${engineUsed}\n• Total Images Merged: ${imgsToConvert.length}\n• File Name: ${safeName}\n• Page Size: Standard A4 Portrait\n• Click Download PDF button below.`,
+          prompt: `✅ Professional PDF Created Successfully!\n• Engine: ${engineUsed}\n• Total Images Merged: ${imgsToConvert.length} page(s)\n• File Name: ${safeName}\n• Page Size: Standard A4 Portrait\n\nClick the red "Download PDF File" button above to save your document.`,
         });
+
+        // Trigger instantaneous download for seamless UX
+        try {
+          const tempAnchor = document.createElement("a");
+          tempAnchor.href = downloadUrl;
+          tempAnchor.download = safeName;
+          document.body.appendChild(tempAnchor);
+          tempAnchor.click();
+          document.body.removeChild(tempAnchor);
+        } catch (e) {
+          console.warn("Auto download triggered, button available:", e);
+        }
+
         confetti({ particleCount: 50, spread: 65, origin: { y: 0.8 } });
         return;
       }
@@ -964,29 +1047,35 @@ export function PromptGeneratorStudio({ compact = false }: PromptGeneratorStudio
             </div>
 
             {/* Dynamic Action Button Label matching chosen service */}
-            <button
-              type="submit"
-              disabled={isLoading || (!inputTopic.trim() && !uploadedImage)}
-              className={`h-11 px-5 sm:px-6 rounded-xl flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold transition-all duration-200 ${
-                isLoading
-                  ? "bg-[#8054ff] text-white shadow-md opacity-90 cursor-wait"
-                  : !inputTopic.trim() && !uploadedImage
-                  ? "bg-[#8054ff]/60 text-white/80 cursor-not-allowed"
-                  : "bg-[#8054ff] hover:bg-[#6f42f5] text-white shadow-md hover:shadow-lg hover:shadow-purple-500/25 active:scale-95 cursor-pointer font-heading"
-              }`}
-            >
-              {isLoading ? (
-                <>
-                  <RefreshCw className="w-4 h-4 animate-spin text-white" />
-                  <span>Processing ({progress}%)...</span>
-                </>
-              ) : (
-                <>
-                  <span>{selectedService.actionButtonLabel}</span>
-                  <ArrowUp className="w-4 h-4 rotate-45 stroke-[2.5]" />
-                </>
-              )}
-            </button>
+            {(() => {
+              const hasImages = Boolean(uploadedImage || uploadedImages.length > 0);
+              const isReady = Boolean(inputTopic.trim() || hasImages || selectedService.id === "image-to-pdf");
+              return (
+                <button
+                  type="submit"
+                  disabled={isLoading || !isReady}
+                  className={`h-11 px-5 sm:px-6 rounded-xl flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold transition-all duration-200 ${
+                    isLoading
+                      ? "bg-[#8054ff] text-white shadow-md opacity-90 cursor-wait"
+                      : !isReady
+                      ? "bg-[#8054ff]/60 text-white/80 cursor-not-allowed"
+                      : "bg-[#8054ff] hover:bg-[#6f42f5] text-white shadow-md hover:shadow-lg hover:shadow-purple-500/25 active:scale-95 cursor-pointer font-heading"
+                  }`}
+                >
+                  {isLoading ? (
+                    <>
+                      <RefreshCw className="w-4 h-4 animate-spin text-white" />
+                      <span>Processing ({progress}%)...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>{selectedService.actionButtonLabel}</span>
+                      <ArrowUp className="w-4 h-4 rotate-45 stroke-[2.5]" />
+                    </>
+                  )}
+                </button>
+              );
+            })()}
           </div>
 
           {/* Real-time 1% to 100% Progress Bar */}

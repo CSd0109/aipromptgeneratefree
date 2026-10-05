@@ -16,10 +16,10 @@ export const BACKLINK_DIRECTORIES: BacklinkCategory[] = [
     description: "Leading peer platforms, prompt marketplaces, and community discovery libraries",
     links: [
       {
-        name: "PromptBase",
-        url: "https://promptbase.com",
-        description: "Leading marketplace for Midjourney, ChatGPT & DALL-E prompts.",
-        badge: "Marketplace",
+        name: "Civitai Prompts",
+        url: "https://civitai.com",
+        description: "Open community ecosystem for open-source AI image and model prompts.",
+        badge: "Community",
         rel: "noopener noreferrer nofollow"
       },
       {
@@ -72,7 +72,7 @@ export const BACKLINK_DIRECTORIES: BacklinkCategory[] = [
     links: [
       {
         name: "OpenAI ChatGPT & Sora",
-        url: "https://openai.com",
+        url: "https://chatgpt.com",
         description: "Official research & development behind GPT-4o, Astra, and Sora 4K video.",
         badge: "Core AI",
         rel: "noopener noreferrer nofollow"
@@ -85,8 +85,8 @@ export const BACKLINK_DIRECTORIES: BacklinkCategory[] = [
         rel: "noopener noreferrer nofollow"
       },
       {
-        name: "Midjourney",
-        url: "https://midjourney.com",
+        name: "Midjourney Community",
+        url: "https://docs.midjourney.com",
         description: "Hyperrealistic generative art engine known for photorealistic rendering.",
         badge: "Art Engine",
         rel: "noopener noreferrer nofollow"
@@ -167,16 +167,16 @@ export const BACKLINK_DIRECTORIES: BacklinkCategory[] = [
     description: "High-DA global authority networks indexing AI Prompt Generate worldwide",
     links: [
       {
-        name: "Medium AI Engineering",
-        url: "https://medium.com/tag/prompt-engineering",
-        description: "In-depth prompt engineering guides, benchmark tutorials, and swipe files.",
-        badge: "DA 96",
+        name: "Hugging Face AI Prompts",
+        url: "https://huggingface.co/models",
+        description: "Leading open platform for machine learning models and dataset prompts.",
+        badge: "DA 92",
         rel: "noopener noreferrer"
       },
       {
-        name: "Reddit r/PromptEngineering",
-        url: "https://www.reddit.com/r/PromptEngineering/",
-        description: "Real-time discussions and prompt sharing with 100K+ prompt creators.",
+        name: "Reddit AI Community",
+        url: "https://reddit.com",
+        description: "Real-time discussions and prompt sharing with global prompt engineering communities.",
         badge: "DA 94",
         rel: "noopener noreferrer"
       },

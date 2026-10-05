@@ -200,7 +200,7 @@ export default async function CategoryPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <SEOPromptClientView config={config} initialPrompts={initialPrompts} />
+      <SEOPromptClientView config={config} initialPrompts={initialPrompts.slice(0, 150)} />
     </>
   );
 }

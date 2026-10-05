@@ -34,6 +34,20 @@ export const metadata: Metadata = {
     description: "Turn simple ideas into detailed AI prompts. Couple photo prompts and video tools, all free.",
     images: ["/top1_free_ai_studio.jpg"],
   },
+  keywords: [
+    "ai prompt library free",
+    "best free ai prompt library",
+    "chatgpt prompt library free",
+    "gemini prompt library free",
+    "midjourney prompt library free",
+    "prompt library free download",
+    "free prompt library for image generation",
+    "ai humanizer free no sign up no word limit",
+    "ai humanizer tool free no sign up",
+    "ai text humanizer free no sign up",
+    "ai alternative free",
+    "is ai free"
+  ],
 };
 
 const faqJsonLd = {

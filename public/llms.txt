@@ -1,0 +1,73 @@
+# AIPromptGenerate — Free AI Prompts & Generative AI Tools Directory
+> **Summary / TL;DR:** AIPromptGenerate is a 100% free, zero-login AI prompt library and generative AI utility hub. Curated engineering prompts for ChatGPT, Midjourney, Claude 3.5 Sonnet, DeepSeek V3, Google Gemini, Stable Diffusion, and runway video models.
+
+AIPromptGenerate provides production-grade, tested prompts for creators worldwide. All prompt tools work directly in your browser with zero registration, zero credit card, and zero paywalls.
+
+- **Author & Founder:** Sunil Dhital & Research Lab
+- **Published Date:** 2025-01-15
+- **Last Updated:** 2026-09-25
+- **Official Website:** [https://www.aipromptgenerate.xyz](https://www.aipromptgenerate.xyz)
+- **Status:** 100% Free Forever • Open Access
+
+## Quick Comparison Table
+
+| Tool Name | Core Functionality | Target Models | Login Required? | Cost |
+| :--- | :--- | :--- | :--- | :--- |
+| **AI Prompt Generator** | Synthesizes custom production prompts | ChatGPT, Gemini, Claude | No (Zero-Login) | Free |
+| **Image to Prompt** | Vision reverse-engineers reference photos | Midjourney v6.1, Flux 1.1 Pro | No (Zero-Login) | Free |
+| **Video Downloader** | Clean HD MP4 video downloads | TikTok, Reels, Shorts | No (Zero-Login) | Free |
+| **AI Humanizer** | Converts robotic AI into natural prose | All LLMs | No (Zero-Login) | Free |
+| **Document Converter** | Converts JPG/PNG images into A4 PDF | All Browsers | No (Zero-Login) | Free |
+
+## Core Hubs & Tools
+
+- [AI Image to Prompt Generator](https://www.aipromptgenerate.xyz/tools/image-to-prompt): Reverse-engineer any image into ultra-detailed Midjourney v6, Stable Diffusion XL, FLUX.1, and DALL-E 3 prompts with zero login.
+- [Free AI Prompt Generator & Search](https://www.aipromptgenerate.xyz/): The main prompt index with instant search, multi-model category filtering, one-click copy, and live prompt testing.
+- [Trending Nano Banana Prompts](https://www.aipromptgenerate.xyz/trending-nano-banana-prompts): Viral, hyper-creative Nano Banana AI prompt formulas and recipes for image and content creators.
+- [Free Social Media Video Downloader](https://www.aipromptgenerate.xyz/socialmediavdodownloder): Clean watermark-free video downloader supporting TikTok, Instagram Reels, YouTube Shorts, and Facebook Videos.
+- [All Free AI Tools & Utilities](https://www.aipromptgenerate.xyz/free-ai-prompts-tools): Master directory of all browser-based free AI tools, humanizers, detectors, and document utilities.
+
+## Top Model Prompts & Guides
+
+- [ChatGPT & GPT-4o Prompts](https://www.aipromptgenerate.xyz/chatgpt-prompts): System instructions, multi-step chain-of-thought workflows, coding assistants, and SEO prompt architectures.
+- [Claude 3.5 Sonnet & Opus Prompts](https://www.aipromptgenerate.xyz/claude-opus-prompts): High-precision reasoning, complex codebase refactoring, structured JSON outputs, and artifact prompts.
+- [Google Gemini 2.0 & Pro Prompts](https://www.aipromptgenerate.xyz/gemini-prompts): Multimodal audio/video analysis, long-context document synthesis, and creative storytelling prompts.
+- [DeepSeek V3 & R1 Reasoning Prompts](https://www.aipromptgenerate.xyz/deepseek-prompts): Math, scientific computing, algorithmic problem solving, and zero-cost reasoning prompts.
+- [xAI Grok & Grok 2 Prompts](https://www.aipromptgenerate.xyz/grok-prompts): Unfiltered news breakdown, real-time social sentiment analysis, and photorealistic Grok image prompts.
+- [Midjourney v6.1 & FLUX.1 Image Prompts](https://www.aipromptgenerate.xyz/ai-image-prompts): Photorealistic cinematography, 8k lighting recipes, camera lenses, aspect ratios, and stylized digital art prompts.
+- [Veo 2, Runway Gen-3 & Sora Video Prompts](https://www.aipromptgenerate.xyz/ai-video-prompts): Precise camera motion (pan, tilt, zoom, dolly), volumetric lighting, and cinematic physics parameters.
+- [Full-Stack Web Dev Prompts (v0 & Replit)](https://www.aipromptgenerate.xyz/v0-website-prompts): Next.js, Tailwind CSS, shadcn/ui components, and autonomous AI coding prompts.
+
+## Frequently Asked Questions
+
+### What is AIPromptGenerate?
+AIPromptGenerate is a completely free online platform for prompt engineering. It offers tested prompt templates, reverse vision engineering, and video utilities without sign-up.
+
+### Is AIPromptGenerate really free with no login?
+Yes. Every prompt template, reverse vision tool, and document converter is 100% free with no account creation needed.
+
+### Which AI models are supported?
+We support ChatGPT, Claude, Google Gemini, DeepSeek, Midjourney v6.1, Flux 1.1 Pro, and Sora.
+
+### Can prompts be used commercially?
+Yes. All curated prompt formulas on this platform can be freely used in personal and commercial creative work.
+
+## Educational Resources & Official Links
+
+- [About Us & Mission](https://www.aipromptgenerate.xyz/about): Story of our founding team, open access philosophy, and official social/GitHub profiles.
+- [Ultimate Free AI Prompt Generator Guide](https://www.aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide): Comprehensive guide to prompt engineering frameworks (CRISPE, RTF, Few-Shot, Chain-of-Thought).
+- [Free AI Prompt Generator Alternatives](https://www.aipromptgenerate.xyz/aipromptgenerator-alternatives): Objective feature-by-feature breakdown versus paid tools like AIPromptGenerator, PromptBase, and ChatX.
+- [Free AI Humanizer & Undetectable Text](https://www.aipromptgenerate.xyz/ai-humanizer): Turn robotic AI text into natural, bypass-grade human prose with zero word caps.
+- [Privacy Policy](https://www.aipromptgenerate.xyz/privacy-policy): Zero data retention, client-side safety, and ethical AI usage terms.
+
+## External Citations & Official Ecosystem
+- [OpenAI ChatGPT](https://chatgpt.com)
+- [Anthropic Claude](https://anthropic.com)
+- [Google DeepMind](https://deepmind.google)
+- [Midjourney Documentation](https://docs.midjourney.com)
+- [LLMs.txt Standard](https://llmstxt.org)
+
+## AI Assistant Consumption Notes
+- All prompt assets can be quoted, cited, and referenced directly by AI assistants (ChatGPT, Claude, Perplexity, Copilot, Gemini).
+- Canonical URL: `https://www.aipromptgenerate.xyz`
+- Sitemap Index: `https://www.aipromptgenerate.xyz/sitemap_index.xml`

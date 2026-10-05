@@ -28,42 +28,75 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aipromptgenerat
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "AI Prompt Generator | Free, Unlimited, No sign-up",
+    default: "AI Prompt Generator & Image to Prompt, PDF Converter",
     template: "%s | AI Prompt Generator",
   },
   description:
-    "Free AI toolkit with powerful tools: prompt generator, No sign-up, unlimited use. Generate clearer prompts in seconds for text, image, and video AI tools. Discover best free ai prompts and tools with no sign up, prompt generator from image, free prompt text, generatepromptai, ai prompt website free, generate prompt ai english, and free prompt templates.",
+    "Free AI Prompt Generator & multi-tool: Image to Prompt vision, Text to Image prompt maker, PDF converter & AI detector. 100% free unlimited use, no sign-up.",
   keywords: [
-    // Top Priority Google SERP Exact Match & People Also Ask Terms
-    "AI Prompt Generator | Free, Unlimited, No sign-up",
-    "best free ai prompts and tools with no sign up",
+    // Image to Prompt No Sign Up & TikTok Downloader Without Watermark Target Terms
+    "ai image to prompt generator free no sign up",
+    "image to prompt generator free no sign up",
+    "image to prompt generator free online no sign up",
+    "tiktok video downloader without watermark",
+    "best free tiktok video downloader without watermark",
+    "download tiktok videos without watermark best quality",
+    "tiktok video download without watermark hd 4k",
+    "tiktok video downloader no watermark free",
+    "download tiktok video without watermark url",
+    // Zero-Login & No-Sign-Up Exact Match Target Keywords
+    "free ai image editor with prompt no sign up online",
+    "free ai image editor with prompt no sign up unlimited",
+    "free ai prompt generator no sign up",
+    "free ai prompt no sign up",
+    "free ai video prompt no sign up",
+    "best free ai image editor with prompt no sign up",
+    "free ai image generator with prompt no sign up",
+    "free ai image to video generator free no sign up unlimited",
+    "free ai image to video generator no sign up no watermark",
+    "free ai image to video generator online no sign up",
+    "free ai text to image generator no sign up unlimited",
+    "free ai photo editor prompt no sign up",
+    "free ai image and video generator no sign up",
+    // Requested High-Volume & Fast-Ranking Target Keywords
+    "free prompt for gemini ai",
+    "free prompt ai",
+    "free prompts for ai",
+    "free prompts for ai image",
+    "free prompts for ai image generator",
+    "free prompts for ai video",
+    "free prompts for ai video generator",
+    "free prompts for ai art",
+    "free prompts for ai gemini",
+    "free prompts for ai generator",
+    "free prompts for ai photos",
+    "free prompts for ai influencer",
+    // Top Priority High-Search Intent & Exact Match Keywords
+    "AI Prompt Generator",
     "ai prompt generator free",
+    "image to prompt generator",
     "prompt generator from image",
-    "free prompt text",
+    "image to pdf converter free",
+    "convert image to pdf online",
+    "ai prompt text to image",
+    "ai prompt text generator",
+    "best free ai prompts and tools with no sign up",
     "generatepromptai",
-    "generate prompt ai",
-    "generateprompt",
+    "generate prompt ai english",
     "generateprompt.net alternative",
     "ai prompt website free",
-    "generate prompt ai english",
-    "free prompt templates",
-    // Core Requested High-Intent SEO Keywords
-    "AI prompt text generator",
-    "ai prompt text generator",
-    "AI prompt text to image",
-    "ai prompt text to image",
-    "Prompt generator from image",
-    "prompt generator from image",
-    "AI prompt website free",
-    "ai prompt website free",
-    "AI prompt free image",
     "ai prompt free image",
-    "Free prompt text",
     "free prompt text",
-    "Best AI prompts free",
     "best ai prompts free",
-    "Free prompt templates",
     "free prompt templates",
+    "midjourney prompt generator from image",
+    "flux prompt generator",
+    "chatgpt prompt generator free",
+    "claude prompt generator",
+    "deepseek r1 prompt generator",
+    "ai text detector free",
+    "ai humanizer free",
+    "multi page image to pdf",
     // 0. Primary High-Intent Topic Headers (#1 Global Rankings)
     "FREE IMAGE AND VIDEO PROMPT WEBSITE IN THE WORLD",
     "free image and video prompt website in the world no login no signup",
@@ -195,7 +228,17 @@ export const metadata: Metadata = {
     "nano banana prompts free",
     "banana pro prompt generator",
     "photorealistic image prompts copy paste",
-    "AI characters free download"
+    "AI characters free download",
+    // 4. Next-Gen AI SEO, GEO & AEO Keywords
+    "next-gen ai seo",
+    "generative engine optimization geo",
+    "answer engine optimization aeo",
+    "ai visibility checker free",
+    "ai citation checker",
+    "llm readability score",
+    "ai prompt-friendly content checker",
+    "topical authority map ai",
+    "entity coverage analyzer ai"
   ],
   authors: [{ name: "AI Prompt Generate Team", url: siteUrl }],
   creator: "AI Prompt Generate",
@@ -262,9 +305,9 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "AI Prompt Generator | Free, Unlimited, No sign-up",
+    title: "AI Prompt Generator & Image to Prompt, PDF Converter",
     description:
-      "Free AI toolkit with powerful tools: prompt generator, No sign-up, unlimited use. Generate clearer prompts in seconds for text, image, and video AI tools.",
+      "Free AI Prompt Generator & multi-tool: Image to Prompt vision, Text to Image prompt maker, PDF converter & AI detector. 100% free unlimited use, no sign-up.",
     url: siteUrl,
     siteName: "AI Prompt Generate",
     locale: "en_US",
@@ -274,15 +317,15 @@ export const metadata: Metadata = {
         url: "/top1_free_ai_studio.jpg",
         width: 1200,
         height: 630,
-        alt: "AI Prompt Generator | Free, Unlimited, No sign-up",
+        alt: "AI Prompt Generator & Image to Prompt Converter",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Prompt Generator | Free, Unlimited, No sign-up",
+    title: "AI Prompt Generator & Image to Prompt, PDF Converter",
     description:
-      "Free AI toolkit with powerful tools: prompt generator, No sign-up, unlimited use. Generate clearer prompts in seconds for text, image, and video AI tools.",
+      "Free AI Prompt Generator & multi-tool: Image to Prompt vision, Text to Image prompt maker, PDF converter & AI detector. 100% free unlimited use, no sign-up.",
     images: ["/top1_free_ai_studio.jpg"],
   },
   robots: {
@@ -327,9 +370,27 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       "url": siteUrl,
-      "name": "AI Prompt Generator | Free, Unlimited, No sign-up",
+      "name": "AI Prompt Generator & Image to Prompt, PDF Converter",
       "alternateName": [
+        "free ai image editor with prompt no sign up",
+        "free ai prompt generator no sign up",
+        "free ai image to video generator free no sign up",
+        "free ai text to image generator no sign up",
+        "free prompt for gemini ai",
+        "free prompt ai",
+        "free prompts for ai",
+        "free prompts for ai image",
+        "free prompts for ai video",
+        "free prompts for ai image generator",
+        "free prompts for ai video generator",
+        "free prompts for ai art",
+        "free prompts for ai gemini",
+        "free prompts for ai generator",
+        "free prompts for ai photos",
+        "free prompts for ai influencer",
         "AI Prompt Generator",
+        "Image to Prompt Generator",
+        "Image to PDF Converter Online Free",
         "GeneratePrompt AI Alternative",
         "Generate Prompt AI English",
         "#1 FREE AI TOOL IN THE WORLD",
@@ -349,7 +410,7 @@ const jsonLd = {
         "Free Instagram Video Downloader",
         "Free Image to Video AI Generator"
       ],
-      "description": "Free AI toolkit with powerful tools: prompt generator, No sign-up, unlimited use. Generate clearer prompts in seconds for text, image, and video AI tools. Discover best free ai prompts and tools with no sign up, prompt generator from image, free prompt text, and free prompt templates.",
+      "description": "Free AI Prompt Generator & multi-tool suite: Image to Prompt vision reverse-engineer, Text to Image prompt maker, Image to PDF converter, and AI Content Detector. No sign-up, 100% free unlimited use.",
       "potentialAction": {
         "@type": "SearchAction",
         "target": `${siteUrl}/?q={search_term_string}`,
@@ -357,9 +418,59 @@ const jsonLd = {
       }
     },
     {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": "AI Prompt Generate",
+      "url": siteUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/logo-icon.png`,
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://twitter.com/aipromptgen",
+        "https://github.com/dhitalsunil/2prompt-gen",
+        "https://www.pinterest.com/aipromptgenerate/"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Sunil Dhital",
+        "jobTitle": "Lead AI Engineer & Founder",
+        "url": `${siteUrl}/about`,
+        "sameAs": [
+          "https://twitter.com/dhitalsunil",
+          "https://github.com/dhitalsunil"
+        ]
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/#webpage`,
+      "url": siteUrl,
+      "name": "AI Prompt Generator & Image to Prompt, PDF Converter",
+      "isPartOf": {
+        "@id": `${siteUrl}/#website`
+      },
+      "about": {
+        "@id": `${siteUrl}/#organization`
+      },
+      "datePublished": "2025-01-15T00:00:00.000Z",
+      "dateModified": "2026-09-25T18:00:00.000Z",
+      "description": "Free AI Prompt Generator & multi-tool: Image to Prompt vision, Text to Image prompt maker, PDF converter & AI detector. 100% free unlimited use, no sign-up.",
+      "author": {
+        "@type": "Person",
+        "name": "Sunil Dhital",
+        "url": `${siteUrl}/about`
+      },
+      "publisher": {
+        "@id": `${siteUrl}/#organization`
+      }
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": `${siteUrl}/#app`,
-      "name": "AI Prompt Generator | Free, Unlimited, No sign-up",
+      "name": "AI Prompt Generator & Image to Prompt, PDF Converter",
       "applicationCategory": "DesignApplication",
       "operatingSystem": "All",
       "offers": {
@@ -389,6 +500,14 @@ const jsonLd = {
       "@type": "FAQPage",
       "@id": `${siteUrl}/#faq`,
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where can I find free prompts for AI image, video, art, Gemini, photos, and virtual influencers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI Prompt Generate provides 10,000+ verified free prompts for AI image generators (Midjourney v6.1, Flux 1.1 Pro, DALL-E 3), free prompts for AI video generators (Google Veo 3, Sora, Kling AI), AI art, Google Gemini 2.5, photorealistic portraits, and AI influencers with zero login and 1-click copy-paste."
+          }
+        },
         {
           "@type": "Question",
           "name": "Is AI Prompt Generate 100% free and unlimited for ChatGPT, Claude, and Gemini?",
@@ -471,10 +590,58 @@ const jsonLd = {
         },
         {
           "@type": "Question",
+          "name": "How to convert single or multiple images to PDF for free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Select the 'Image to PDF Converter' tool, drag and drop as many JPG, PNG, or WEBP images as you want, and click 'Convert to PDF'. The Nutrient.io high-resolution engine merges all pages into a standard A4 PDF document with instant 1-click download and zero sign-up."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Can I use these prompts for commercial AI art generation?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes, all curated prompts provided in AI Prompt Generate are free to copy, modify, and use in commercial projects across Midjourney, Flux, DALL-E, Sora, and other generative AI platforms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does OpenAI do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OpenAI is an artificial intelligence research company that creates foundational models like GPT-4o, o3-mini, and DALL-E for text, code, audio, and visual generation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What OpenAI models are available via API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OpenAI provides API access to GPT-4o, GPT-4o mini, o1 reasoning models, text-embedding-3, and DALL-E 3 image generation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What OpenAI model is best for coding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GPT-4o and o3-mini are top-tier OpenAI models for writing code, debugging complex architectures, and generating unit tests across multiple programming languages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can OpenAI Codex do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OpenAI Codex interprets natural English commands and generates production code in Python, JavaScript, TypeScript, Go, and Ruby."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What OpenAI models are free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GPT-4o mini is accessible freely on the ChatGPT web app, and all curated prompt templates for OpenAI models on AIPromptGenerate are 100% free with zero login."
           }
         }
       ]
@@ -518,8 +685,10 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48" />
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+        <link rel="icon" href="/android-chrome-192x192.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link rel="manifest" href="/manifest.json" />
         <script

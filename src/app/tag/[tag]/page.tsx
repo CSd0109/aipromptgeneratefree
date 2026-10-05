@@ -119,7 +119,7 @@ export default async function TagArchivePage({ params }: Props) {
 
         {/* Prompts Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {matchingPrompts.map((item) => (
+          {matchingPrompts.slice(0, 100).map((item) => (
             <Link key={item.id} href={`/prompt/${item.id}`} className="group block">
               <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-purple-500 hover:shadow-md transition-all p-3 space-y-3">
                 <div className="aspect-video w-full rounded-xl overflow-hidden bg-slate-100">

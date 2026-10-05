@@ -1,4 +1,28 @@
-import promptsData from "./prompts.json";
+import re
+import json
+
+# Read data.ts to extract all objects
+with open('/home/dhitalsunil/2prompt-gen/src/lib/data.ts', 'r') as f:
+    content = f.read()
+
+# Match the SAMPLE_PROMPTS array definition
+m = re.search(r'export const SAMPLE_PROMPTS:\s*any\[\]\s*=\s*(\[\s*\{.*\}\s*\]);', content, re.DOTALL)
+if not m:
+    # try matching without semicolon
+    m = re.search(r'export const SAMPLE_PROMPTS:\s*any\[\]\s*=\s*(\[\s*\{.*\}\s*\])', content, re.DOTALL)
+
+if m:
+    raw_array = m.group(1)
+    prompts = json.loads(raw_array)
+    print(f"Extracted {len(prompts)} prompts from data.ts.")
+    
+    # Save directly to public/prompts.json and src/lib/prompts.json
+    with open('/home/dhitalsunil/2prompt-gen/src/lib/prompts.json', 'w') as f_out:
+        json.dump(prompts, f_out)
+    print("Saved src/lib/prompts.json")
+    
+    # Write clean data.ts
+    data_ts_code = '''import promptsData from "./prompts.json";
 
 export interface PromptItem {
   id: string;
@@ -42,3 +66,9 @@ export const AI_MODELS = [
   { id: "seadance", name: "SeaDance 2.2" },
   { id: "sora", name: "Sora Video" }
 ];
+'''
+    with open('/home/dhitalsunil/2prompt-gen/src/lib/data.ts', 'w') as f_out:
+        f_out.write(data_ts_code)
+    print("Updated data.ts cleanly!")
+else:
+    print("Failed to find SAMPLE_PROMPTS regex match")

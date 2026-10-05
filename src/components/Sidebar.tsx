@@ -91,10 +91,15 @@ export function Sidebar({ currentTab, setCurrentTab, selectedFilter, setSelected
           Prompt Galleries
         </div>
 
-        <button
-          onClick={() => {
-            setCurrentTab("gallery");
-            setSelectedFilter("image");
+        <Link
+          href="/ai-image-prompts"
+          onClick={(e) => {
+            if (!e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0 && window.location.pathname === "/") {
+              e.preventDefault();
+              setCurrentTab("gallery");
+              setSelectedFilter("image");
+              window.history.pushState(null, "", "/ai-image-prompts");
+            }
           }}
           className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm transition ${
             currentTab === "gallery" && selectedFilter === "image"
@@ -104,7 +109,7 @@ export function Sidebar({ currentTab, setCurrentTab, selectedFilter, setSelected
         >
           <ImageIcon className="w-4 h-4 text-purple-600" />
           <span>Image Prompts</span>
-        </button>
+        </Link>
 
         <button
           onClick={() => {
@@ -121,10 +126,15 @@ export function Sidebar({ currentTab, setCurrentTab, selectedFilter, setSelected
           <span>Couple Poses</span>
         </button>
 
-        <button
-          onClick={() => {
-            setCurrentTab("gallery");
-            setSelectedFilter("video");
+        <Link
+          href="/ai-video-prompts"
+          onClick={(e) => {
+            if (!e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0 && window.location.pathname === "/") {
+              e.preventDefault();
+              setCurrentTab("gallery");
+              setSelectedFilter("video");
+              window.history.pushState(null, "", "/ai-video-prompts");
+            }
           }}
           className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm transition ${
             currentTab === "gallery" && selectedFilter === "video"
@@ -134,12 +144,17 @@ export function Sidebar({ currentTab, setCurrentTab, selectedFilter, setSelected
         >
           <Video className="w-4 h-4 text-rose-600" />
           <span>Video Prompts</span>
-        </button>
+        </Link>
 
-        <button
-          onClick={() => {
-            setCurrentTab("gallery");
-            setSelectedFilter("ui");
+        <Link
+          href="/v0-website-prompts"
+          onClick={(e) => {
+            if (!e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0 && window.location.pathname === "/") {
+              e.preventDefault();
+              setCurrentTab("gallery");
+              setSelectedFilter("ui");
+              window.history.pushState(null, "", "/v0-website-prompts");
+            }
           }}
           className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm transition ${
             currentTab === "gallery" && selectedFilter === "ui"
@@ -149,7 +164,7 @@ export function Sidebar({ currentTab, setCurrentTab, selectedFilter, setSelected
         >
           <Layout className="w-4 h-4 text-cyan-600" />
           <span>Website UI</span>
-        </button>
+        </Link>
       </div>
 
       {/* 3. Clean All Models Dropdown Option (replaces blurry list) */}

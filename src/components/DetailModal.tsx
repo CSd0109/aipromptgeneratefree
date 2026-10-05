@@ -20,12 +20,29 @@ export function DetailModal({ item, onClose, onSelectRelated }: DetailModalProps
   const [shareCopied, setShareCopied] = useState(false);
 
   useEffect(() => {
+    // Update browser URL to /prompt/[id] cleanly without full page refresh
+    const originalUrl = window.location.pathname + window.location.search;
+    if (typeof window !== "undefined" && item?.id) {
+      window.history.pushState({ modalOpen: true, id: item.id }, "", `/prompt/${item.id}`);
+    }
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
+    const handlePopState = () => {
+      onClose();
+    };
+
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
+    window.addEventListener("popstate", handlePopState);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("popstate", handlePopState);
+      if (typeof window !== "undefined" && window.location.pathname.startsWith("/prompt/")) {
+        window.history.replaceState(null, "", originalUrl.startsWith("/prompt/") ? "/" : originalUrl);
+      }
+    };
+  }, [item?.id, onClose]);
 
   if (!item) return null;
 
@@ -53,7 +70,9 @@ export function DetailModal({ item, onClose, onSelectRelated }: DetailModalProps
   };
 
   const handleShare = () => {
-    navigator.clipboard.writeText(window.location.href);
+    const siteUrl = typeof window !== "undefined" ? window.location.origin : "https://www.aipromptgenerate.xyz";
+    const directUrl = `${siteUrl}/prompt/${item.id}`;
+    navigator.clipboard.writeText(directUrl);
     setShareCopied(true);
     setTimeout(() => setShareCopied(false), 2000);
   };
@@ -91,20 +110,30 @@ export function DetailModal({ item, onClose, onSelectRelated }: DetailModalProps
       <div className="relative z-10 w-full max-w-6xl bg-[#0f0f0f] border border-[#272727] rounded-2xl shadow-2xl overflow-hidden flex flex-col my-auto max-h-[95vh]">
         {/* Top Header Bar */}
         <div className="flex items-center justify-between px-6 py-3 border-b border-[#272727] bg-[#141414]">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse" />
             <span className="text-xs font-semibold uppercase tracking-wider text-[#aaaaaa]">
               Prompt Dashboard • {item.model}
             </span>
           </div>
 
-          <button
-            onClick={onClose}
-            className="p-1.5 text-[#aaaaaa] hover:text-white rounded-full hover:bg-[#272727] transition"
-            title="Close (Esc)"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <a
+              href={`/prompt/${item.id}`}
+              className="text-xs font-medium text-purple-400 hover:text-purple-300 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-purple-950/40 border border-purple-800/40 transition"
+              title="Open full dedicated page"
+            >
+              <span>Full Page</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+            <button
+              onClick={onClose}
+              className="p-1.5 text-[#aaaaaa] hover:text-white rounded-full hover:bg-[#272727] transition cursor-pointer"
+              title="Close (Esc)"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Modal Body */}

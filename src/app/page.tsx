@@ -13,6 +13,7 @@ import { BlogsAndFaqSection } from "@/components/BlogsAndFaqSection";
 import { BacklinkDirectorySection } from "@/components/BacklinkDirectorySection";
 import { AlternativesComparisonSection } from "@/components/AlternativesComparisonSection";
 import { MultilingualSeoSection } from "@/components/MultilingualSeoSection";
+import { GeoAiSeoSection } from "@/components/GeoAiSeoSection";
 import { SocialVideoDownloader } from "@/components/SocialVideoDownloader";
 import { SAMPLE_PROMPTS, PromptItem } from "@/lib/data";
 import { Dices, Sparkles, Flame, Search } from "lucide-react";
@@ -21,17 +22,46 @@ import confetti from "canvas-confetti";
 const PAGE_SIZE = 32;
 
 const TRENDING_KEYWORDS = [
-  { label: "AI prompt generator free", query: "prompt generator free" },
-  { label: "best free ai prompts and tools with no sign up", query: "free" },
-  { label: "AI prompt text generator", query: "prompt text generator" },
-  { label: "AI prompt text to image", query: "text to image" },
-  { label: "Prompt generator from image", query: "image" },
-  { label: "generatepromptai", query: "generateprompt" },
-  { label: "AI prompt website free", query: "free" },
-  { label: "generate prompt ai english", query: "english" },
-  { label: "Free prompt text", query: "text" },
-  { label: "Best AI prompts free", query: "best" },
-  { label: "Free prompt templates", query: "template" },
+  { label: "AI Prompt Library Free", query: "prompt library" },
+  { label: "AI Text to Video (No Limits)", query: "text to video" },
+  { label: "Nano Banana AI Prompts", query: "nano banana" },
+  { label: "Gemini Photo Editing Prompts", query: "gemini photo" },
+  { label: "ChatGPT Prompts Free", query: "chatgpt" },
+  { label: "Grok AI Prompts Free", query: "grok" },
+  { label: "AI Humanizer Free (No Sign Up)", query: "humanizer" },
+  { label: "AI Image to Prompt (No Sign Up)", query: "image to prompt" },
+  { label: "TikTok Downloader (No Watermark)", query: "tiktok video downloader" },
+  { label: "Free AI Image Editor with Prompt (No Sign Up)", query: "image editor" },
+  { label: "Free AI Image to Video Generator (No Sign Up)", query: "image to video" },
+  { label: "Free AI Prompt Generator (No Sign Up)", query: "no sign up" },
+  { label: "Free AI Text to Image Generator (No Sign Up)", query: "text to image" },
+  { label: "Free Prompt for Gemini AI", query: "gemini" },
+  { label: "Free Prompt AI", query: "prompt ai" },
+  { label: "Free Prompts for AI", query: "free" },
+  { label: "Free Prompts for AI Image", query: "image" },
+  { label: "Free Prompts for AI Image Generator", query: "image generator" },
+  { label: "Free Prompts for AI Video", query: "video" },
+  { label: "Free Prompts for AI Video Generator", query: "video generator" },
+  { label: "Free Prompts for AI Art", query: "art" },
+  { label: "Free Prompts for AI Gemini", query: "gemini" },
+  { label: "Free Prompts for AI Generator", query: "generator" },
+  { label: "Free Prompts for AI Photos", query: "photo" },
+  { label: "Free Prompts for AI Influencer", query: "influencer" },
+  { label: "AI Prompt Generator", query: "prompt generator free" },
+  { label: "Image to Prompt Generator", query: "image to prompt" },
+  { label: "Prompt Generator from Image", query: "image" },
+  { label: "Image to PDF Converter Free", query: "pdf" },
+  { label: "AI Prompt Text to Image", query: "text to image" },
+  { label: "AI Prompt Text Generator", query: "prompt text generator" },
+  { label: "Best Free AI Prompts & Tools (No Sign Up)", query: "free" },
+  { label: "Midjourney Prompt Generator", query: "midjourney" },
+  { label: "Flux.1 AI Prompts", query: "flux" },
+  { label: "ChatGPT Prompt Generator Free", query: "chatgpt" },
+  { label: "Claude 3.7 Coding Prompts", query: "claude" },
+  { label: "DeepSeek R1 Prompts", query: "deepseek" },
+  { label: "GeneratePrompt AI English", query: "generateprompt" },
+  { label: "Free Prompt Templates", query: "template" },
+  { label: "Free Prompt Text", query: "text" },
 ];
 
 export default function HomePage() {
@@ -299,19 +329,30 @@ export default function HomePage() {
             {/* 5. Clean Horizontal Category Pills Bar matching image.jpg */}
             <div id="prompt-categories" className="flex items-center justify-center gap-2.5 flex-wrap mt-7 max-w-4xl px-2">
               {[
-                { id: "people", label: "Portrait", icon: "👤" },
-                { id: "nature", label: "Landscape", icon: "🏔️" },
-                { id: "digital-art", label: "Illustration", icon: "🎨" },
-                { id: "product", label: "Product", icon: "📦" },
-                { id: "marketing", label: "Marketing", icon: "📈" },
-                { id: "fantasy", label: "Fantasy", icon: "✨" },
-                { id: "all", label: "More", icon: "•••" }
+                { id: "ai-image-prompts", label: "Portrait", icon: "👤", href: "/ai-image-prompts", filterId: "people" },
+                { id: "nature-prompts", label: "Landscape", icon: "🏔️", href: "/ai-image-prompts", filterId: "nature" },
+                { id: "digital-art", label: "Illustration", icon: "🎨", href: "/ai-image-prompts", filterId: "digital-art" },
+                { id: "product-prompts", label: "Product", icon: "📦", href: "/ai-image-prompts", filterId: "product" },
+                { id: "ai-video-prompts", label: "Video AI", icon: "🎥", href: "/ai-video-prompts", filterId: "video" },
+                { id: "chatgpt-prompts", label: "ChatGPT", icon: "🤖", href: "/chatgpt-prompts", filterId: "all" },
+                { id: "banana-prompts", label: "Nano Banana", icon: "🍌", href: "/nano-banana-pro-prompts", filterId: "banana" },
+                { id: "all-prompts", label: "All Prompts", icon: "•••", href: "/ai-image-prompts", filterId: "all" }
               ].map((cat) => {
-                const isActive = selectedFilter === cat.id;
+                const isActive = selectedFilter === cat.filterId;
                 return (
-                  <button
+                  <Link
                     key={cat.id}
-                    onClick={() => handleFilterChange(cat.id === "all" ? "image" : cat.id)}
+                    href={cat.href}
+                    onClick={(e) => {
+                      if (!e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
+                        // If same page filter desired, change filter and update URL history
+                        e.preventDefault();
+                        handleFilterChange(cat.filterId === "all" ? "image" : cat.filterId);
+                        if (typeof window !== "undefined") {
+                          window.history.pushState(null, "", cat.href);
+                        }
+                      }
+                    }}
                     className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 border cursor-pointer active:scale-95 ${
                       isActive
                         ? "bg-[#101828] text-white border-[#101828] shadow-sm"
@@ -320,7 +361,7 @@ export default function HomePage() {
                   >
                     <span>{cat.icon}</span>
                     <span>{cat.label}</span>
-                  </button>
+                  </Link>
                 );
               })}
             </div>
@@ -370,16 +411,13 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <button
-                    onClick={() => {
-                      setSelectedFilter("image");
-                      setDisplayCount(PAGE_SIZE);
-                    }}
+                  <Link
+                    href="/ai-image-prompts"
                     className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#8054ff] hover:text-[#6f42f5] transition cursor-pointer"
                   >
                     <span>View all examples</span>
                     <span className="text-base">→</span>
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -447,6 +485,9 @@ export default function HomePage() {
 
             {/* Global Multi-Language International SEO Section (50+ Languages) */}
             <MultilingualSeoSection />
+
+            {/* Next-Gen AI SEO & Generative Engine Optimization (GEO/AEO) Section */}
+            <GeoAiSeoSection />
           </div>
 
           {/* Clean, Modern, Organized 4-Column Footer */}
@@ -470,9 +511,12 @@ export default function HomePage() {
                 <p className="text-xs text-slate-500 leading-relaxed font-sans font-medium">
                   The world&apos;s #1 free AI prompt synthesis studio and character library. 100% Free forever, no login required.
                 </p>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-bold border border-emerald-200">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span>100% Free Forever</span>
+                <div className="flex items-center gap-3 pt-2 text-xs font-semibold text-slate-500 font-sans">
+                  <a href="https://twitter.com/aipromptgen" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition">𝕏 / Twitter</a>
+                  <span>•</span>
+                  <a href="https://github.com/dhitalsunil/2prompt-gen" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition">GitHub</a>
+                  <span>•</span>
+                  <a href="https://www.pinterest.com/aipromptgenerate/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition">Pinterest</a>
                 </div>
               </div>
 
@@ -621,16 +665,40 @@ export default function HomePage() {
             </div>
 
             {/* Bottom Copyright & Semantic SEO Microdata Bar */}
-            <div className="pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 font-sans">
-              <p>
-                © {new Date().getFullYear()} <strong className="text-slate-700">AI Prompt Generate</strong>. All rights reserved. Zero Login • 100% Free Forever.
-              </p>
-              <div className="flex items-center gap-4 text-[11px] font-semibold text-slate-500 font-outfit">
-                <span>Top 1 Free AI Website in the World</span>
+            <div className="pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-sans">
+              <div className="flex flex-col sm:flex-row items-center gap-3">
+                <p>
+                  © {new Date().getFullYear()} <strong className="text-slate-700">AI Prompt Generate</strong>. All rights reserved. Zero Login • 100% Free Forever.
+                </p>
+                <a 
+                  href="https://seomods.com/audit/aipromptgenerate.xyz?utm_source=aipromptgenerate.xyz&utm_medium=badge&utm_campaign=seomods-badge&utm_content=card" 
+                  target="_blank" 
+                  rel="noopener" 
+                  title="SEOmods SEO audit badge for aipromptgenerate.xyz"
+                  className="hover:opacity-90 transition inline-block"
+                >
+                  <img 
+                    src="https://seomods.com/badge/aipromptgenerate.xyz.svg?t=seo-audit" 
+                    alt="SEOmods SEO audit badge for aipromptgenerate.xyz" 
+                    width={180} 
+                    height={48} 
+                    loading="lazy" 
+                    className="border-0 rounded-lg shadow-2xs"
+                  />
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center gap-4 text-[11px] font-semibold text-slate-500 font-outfit">
+                <Link href="/about" className="hover:text-purple-600 transition">About Us</Link>
                 <span>•</span>
-                <span>Privacy First</span>
+                <Link href="/privacy-policy" className="hover:text-purple-600 transition">Privacy Policy</Link>
                 <span>•</span>
-                <span>Global Free Access</span>
+                <Link href="/llms.txt" className="hover:text-purple-600 transition font-mono">llms.txt</Link>
+                <span>•</span>
+                <span className="text-slate-400">Published: Jan 15, 2025</span>
+                <span>•</span>
+                <span className="text-purple-700 font-bold bg-purple-50 px-2 py-0.5 rounded-md border border-purple-200/60">
+                  Last Updated: September 25, 2026
+                </span>
               </div>
             </div>
           </footer>

@@ -110,6 +110,12 @@ export function Navbar({ onToggleSidebar, onOpenGenerator, onGoHome, onSelectCat
         >
           Blog
         </button>
+        <Link 
+          href="/about"
+          className="hover:text-[#7c5cfc] transition cursor-pointer"
+        >
+          About
+        </Link>
       </nav>
 
       {/* 3. Right: "No Login Required" + "Create Prompt ->" Button */}
