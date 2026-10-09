@@ -60,8 +60,8 @@ export function PromptCard({ item, onOpenDetail, priority = false }: PromptCardP
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={item.thumbnail}
-          alt={item.title}
-          title={item.title}
+          alt={`${item.title} – ${item.model} AI Prompt`}
+          title={`${item.title} – Free ${item.model} Prompt`}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
           referrerPolicy="no-referrer"

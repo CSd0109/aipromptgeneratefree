@@ -262,12 +262,12 @@ export default function HomePage() {
 
             {/* 1. Large Powerful Headline */}
             <h1 className="text-3xl sm:text-5xl md:text-[54px] font-bold text-[#101828] tracking-tight leading-[1.15] max-w-4xl font-heading">
-              Generate <span className="text-[#8054ff]">Perfect</span> AI Prompts <br className="hidden sm:inline" /> in Seconds
+              Free AI Prompt Generator &amp; <span className="text-[#8054ff]">Image to Prompt</span> Studio
             </h1>
 
             {/* 2. Subheadline matching image.jpg */}
             <p className="text-sm sm:text-base text-slate-500 font-normal max-w-2xl mt-4 leading-relaxed">
-              Powerful AI prompt generation tool for stunning results. <br className="hidden sm:inline" /> 100% Free. No login. No watermark.
+              Craft stunning, copy-ready prompts for Midjourney, Flux.1, ChatGPT-4o, Veo 3 &amp; Claude. <br className="hidden sm:inline" /> 100% Free Forever • Zero Sign-Up • Instant Copy.
             </p>
 
             {/* 3. Hero Center Area with Left & Right Floating Rotated Cards */}
@@ -403,10 +403,10 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3 border-b border-slate-100 gap-2">
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-[#101828] tracking-tight font-heading">
-                    Beautiful Prompts. Stunning Results.
+                    Trending AI Prompts &amp; Creative Gallery
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-500 font-normal mt-0.5">
-                    Explore AI generated prompts crafted for creativity and impact.
+                    Explore verified prompts for Midjourney v6.1, Flux.1, Veo 3 &amp; Nano Banana Pro.
                   </p>
                 </div>
 

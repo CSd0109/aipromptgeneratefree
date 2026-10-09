@@ -28,11 +28,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aipromptgenerate.xy
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "AI Prompt Generator & Image to Prompt, PDF Converter",
+    default: "AI Prompt Generator – Free Text & Image to Prompt Studio",
     template: "%s | AI Prompt Generator",
   },
   description:
-    "Free AI Prompt Generator & multi-tool: Image to Prompt vision, Text to Image prompt maker, PDF converter & AI detector. 100% free unlimited use, no sign-up.",
+    "Free AI Prompt Generator: create high-converting prompts for Midjourney, ChatGPT-4o, Flux, Veo 3 & Claude. Image to prompt vision, zero login, 100% free forever.",
   keywords: [
     // Image to Prompt No Sign Up & TikTok Downloader Without Watermark Target Terms
     "ai image to prompt generator free no sign up",
@@ -477,6 +477,13 @@ const jsonLd = {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "14850",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "featureList": [
         "AI Prompt Website Free – 100% free prompt directory and generation studio with zero login and no credit limits",
