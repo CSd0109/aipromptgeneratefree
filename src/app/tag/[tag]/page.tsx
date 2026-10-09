@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { tag } = await params;
   const decodedTag = decodeURIComponent(tag).replace(/-/g, " ");
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aipromptgenerate.xyz";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aipromptgenerate.xyz";
   const canonicalUrl = `${siteUrl}/tag/${tag}`;
 
   const cleanTitle = `Best #${decodedTag} AI Prompts (100% Free Copy & Paste)`;
@@ -84,7 +84,7 @@ export default async function TagArchivePage({ params }: Props) {
     notFound();
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aipromptgenerate.xyz";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aipromptgenerate.xyz";
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 flex flex-col">

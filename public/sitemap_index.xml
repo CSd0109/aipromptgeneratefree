@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://www.aipromptgenerate.xyz/sitemap-pages.xml</loc>
+    <loc>https://aipromptgenerate.xyz/sitemap-pages.xml</loc>
     <lastmod>2026-09-25</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://www.aipromptgenerate.xyz/sitemap-prompts.xml</loc>
+    <loc>https://aipromptgenerate.xyz/sitemap-prompts.xml</loc>
     <lastmod>2026-09-25</lastmod>
   </sitemap>
 </sitemapindex>

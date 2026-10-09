@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aipromptgenerate.xyz";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aipromptgenerate.xyz";
   const canonicalUrl = `${siteUrl}/${config.slug}`;
 
   return {
@@ -143,7 +143,7 @@ export default async function CategoryPage({ params }: Props) {
     return true;
   });
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aipromptgenerate.xyz";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aipromptgenerate.xyz";
 
   // Breadcrumb and CollectionPage JSON-LD
   const jsonLd = {

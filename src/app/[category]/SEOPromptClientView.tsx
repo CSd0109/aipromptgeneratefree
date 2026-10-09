@@ -203,7 +203,7 @@ export function SEOPromptClientView({ config, initialPrompts }: Props) {
 
           {/* Bottom Backlink Directory / Footer Crosslinks */}
           <footer className="pt-8 border-t border-slate-200 text-center text-xs text-slate-500 pb-12">
-            <p>© 2026 AI Prompt Generate (www.aipromptgenerate.xyz). 100% Free Unlimited AI Prompt Engineering Hub.</p>
+            <p>© 2026 AI Prompt Generate (aipromptgenerate.xyz). 100% Free Unlimited AI Prompt Engineering Hub.</p>
           </footer>
         </main>
       </div>

@@ -458,7 +458,7 @@ export const SEO_PAGES: Record<string, SEOCategoryConfig> = {
       },
       {
         q: "Is there a completely free alternative to AIPromptGenerator.app without login?",
-        a: "Yes! AI Prompt Generate (www.aipromptgenerate.xyz) is 100% free forever with no credit limits, no subscription fees, and no sign-up required."
+        a: "Yes! AI Prompt Generate (aipromptgenerate.xyz) is 100% free forever with no credit limits, no subscription fees, and no sign-up required."
       }
     ]
   },

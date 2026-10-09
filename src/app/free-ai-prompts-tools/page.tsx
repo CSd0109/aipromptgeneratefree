@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Free AI prompt generator with no sign-up. Get ready-to-use AI couple prompts from two photos, plus a video saver for your own TikTok clips. Fast, simple, mobile-friendly.",
   alternates: {
-    canonical: "https://www.aipromptgenerate.xyz/free-ai-prompts-tools",
+    canonical: "https://aipromptgenerate.xyz/free-ai-prompts-tools",
   },
   robots: {
     index: true,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Free AI Prompt Generator & Photo Prompt Tools (No Sign-Up)",
     description: "Turn simple ideas into detailed AI prompts. Couple photo prompts and video tools, all free.",
-    url: "https://www.aipromptgenerate.xyz/free-ai-prompts-tools",
+    url: "https://aipromptgenerate.xyz/free-ai-prompts-tools",
     siteName: "AI Prompt Generate",
     images: [
       {
@@ -56,15 +56,15 @@ const faqJsonLd = {
     {
       "@type": "WebSite",
       "name": "AIPromptGenerate",
-      "url": "https://www.aipromptgenerate.xyz"
+      "url": "https://aipromptgenerate.xyz"
     },
     {
       "@type": "WebPage",
       "name": "Free AI Prompt Generator & Photo Prompt Tools",
-      "url": "https://www.aipromptgenerate.xyz/free-ai-prompts-tools",
+      "url": "https://aipromptgenerate.xyz/free-ai-prompts-tools",
       "isPartOf": {
         "@type": "WebSite",
-        "url": "https://www.aipromptgenerate.xyz"
+        "url": "https://aipromptgenerate.xyz"
       }
     },
     {

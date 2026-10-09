@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | AI Prompt Generate',
   description: 'Privacy Policy, data protection rules, developer API compliance, and terms for AI Prompt Generate and associated services.',
   alternates: {
-    canonical: 'https://www.aipromptgenerate.xyz/privacy-policy',
+    canonical: 'https://aipromptgenerate.xyz/privacy-policy',
   },
 };
 
@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-bold text-white mb-3">1. Introduction & Overview</h2>
             <p>
-              Welcome to <strong>AI Prompt Generate</strong> (<a href="https://www.aipromptgenerate.xyz" className="text-indigo-400 hover:underline">https://www.aipromptgenerate.xyz</a>). 
+              Welcome to <strong>AI Prompt Generate</strong> (<a href="https://aipromptgenerate.xyz" className="text-indigo-400 hover:underline">https://aipromptgenerate.xyz</a>). 
               We respect your privacy and are committed to protecting your personal data. This Privacy Policy details how we collect, handle, 
               store, and protect information when you visit our website, utilize our free prompt engineering generators, explore our visual prompt galleries, 
               or interact with our third-party developer integrations (including Pinterest, GitHub, Google, and related platform APIs).
@@ -117,7 +117,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="mt-4 p-4 rounded-xl bg-slate-950 border border-slate-800">
               <p className="font-semibold text-white">AI Prompt Generate Legal & Compliance</p>
-              <p className="text-slate-400 text-sm mt-1">Website: <a href="https://www.aipromptgenerate.xyz" className="text-indigo-400 hover:underline">https://www.aipromptgenerate.xyz</a></p>
+              <p className="text-slate-400 text-sm mt-1">Website: <a href="https://aipromptgenerate.xyz" className="text-indigo-400 hover:underline">https://aipromptgenerate.xyz</a></p>
               <p className="text-slate-400 text-sm">Direct Developer Contact: <span className="text-slate-200">dhitalsunil@gmail.com</span></p>
               <p className="text-slate-400 text-sm">Kathmandu, Nepal</p>
             </div>

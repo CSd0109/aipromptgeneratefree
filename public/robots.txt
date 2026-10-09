@@ -44,12 +44,12 @@ User-agent: Luminous-Bot
 Allow: /
 
 # XML Sitemaps & LLM Discovery
-Sitemap: https://www.aipromptgenerate.xyz/sitemap_index.xml
-Sitemap: https://www.aipromptgenerate.xyz/sitemap.xml
-Sitemap: https://www.aipromptgenerate.xyz/sitemap-pages.xml
-Sitemap: https://www.aipromptgenerate.xyz/sitemap-prompts.xml
+Sitemap: https://aipromptgenerate.xyz/sitemap_index.xml
+Sitemap: https://aipromptgenerate.xyz/sitemap.xml
+Sitemap: https://aipromptgenerate.xyz/sitemap-pages.xml
+Sitemap: https://aipromptgenerate.xyz/sitemap-prompts.xml
 
 # LLM & AI Discoverability File
 # https://llmstxt.org standard
-# Loc: https://www.aipromptgenerate.xyz/llms.txt
+# Loc: https://aipromptgenerate.xyz/llms.txt
 

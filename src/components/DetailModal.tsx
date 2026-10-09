@@ -70,7 +70,7 @@ export function DetailModal({ item, onClose, onSelectRelated }: DetailModalProps
   };
 
   const handleShare = () => {
-    const siteUrl = typeof window !== "undefined" ? window.location.origin : "https://www.aipromptgenerate.xyz";
+    const siteUrl = typeof window !== "undefined" ? window.location.origin : "https://aipromptgenerate.xyz";
     const directUrl = `${siteUrl}/prompt/${item.id}`;
     navigator.clipboard.writeText(directUrl);
     setShareCopied(true);

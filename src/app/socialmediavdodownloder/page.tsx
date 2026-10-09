@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Fast, 100% free social media video downloader for TikTok, Instagram Reels, YouTube Shorts, Facebook, Twitter/X, and Pinterest. Save HD MP4 videos without watermarks or login.",
   alternates: {
-    canonical: "https://www.aipromptgenerate.xyz/socialmediavdodownloder",
+    canonical: "https://aipromptgenerate.xyz/socialmediavdodownloder",
   },
   robots: {
     index: true,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Free Social Media Video Downloader - No Watermark & 100% Free",
     description: "Download TikTok, Instagram Reels, Shorts, and Twitter videos in 1080p HD without login or watermarks.",
-    url: "https://www.aipromptgenerate.xyz/socialmediavdodownloder",
+    url: "https://aipromptgenerate.xyz/socialmediavdodownloder",
     siteName: "AI Prompt Generate",
     images: [
       {
@@ -85,9 +85,9 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebApplication",
-      "@id": "https://www.aipromptgenerate.xyz/socialmediavdodownloder#app",
+      "@id": "https://aipromptgenerate.xyz/socialmediavdodownloder#app",
       "name": "Social Media Video Downloader",
-      "url": "https://www.aipromptgenerate.xyz/socialmediavdodownloder",
+      "url": "https://aipromptgenerate.xyz/socialmediavdodownloder",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "All",
       "offers": {
@@ -113,19 +113,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.aipromptgenerate.xyz/"
+          "item": "https://aipromptgenerate.xyz/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Video Downloader",
-          "item": "https://www.aipromptgenerate.xyz/socialmediavdodownloder"
+          "item": "https://aipromptgenerate.xyz/socialmediavdodownloder"
         }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.aipromptgenerate.xyz/socialmediavdodownloder#faq",
+      "@id": "https://aipromptgenerate.xyz/socialmediavdodownloder#faq",
       "mainEntity": [
         {
           "@type": "Question",

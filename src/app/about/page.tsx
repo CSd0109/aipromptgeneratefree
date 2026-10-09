@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   description:
     "Learn about AI Prompt Generate, our mission to democratize generative AI prompts for creators worldwide, our founding team, and our zero-login open philosophy.",
   alternates: {
-    canonical: "https://www.aipromptgenerate.xyz/about",
+    canonical: "https://aipromptgenerate.xyz/about",
   },
   openGraph: {
     title: "About AI Prompt Generate - 100% Free AI Prompt Studio",
     description: "Democratizing prompt engineering with zero barriers, zero fees, and universal AI tool access.",
-    url: "https://www.aipromptgenerate.xyz/about",
+    url: "https://aipromptgenerate.xyz/about",
     siteName: "AI Prompt Generate",
     type: "website",
     images: [{ url: "/top1_free_ai_studio.jpg", width: 1200, height: 630, alt: "About AI Prompt Generate" }],
@@ -22,20 +22,20 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "@id": "https://www.aipromptgenerate.xyz/about#about",
+  "@id": "https://aipromptgenerate.xyz/about#about",
   "name": "About AI Prompt Generate",
-  "url": "https://www.aipromptgenerate.xyz/about",
+  "url": "https://aipromptgenerate.xyz/about",
   "description": "About AI Prompt Generate, the premier 100% free zero-login AI prompt library and generative tools ecosystem.",
   "mainEntity": {
     "@type": "Organization",
     "name": "AI Prompt Generate",
-    "url": "https://www.aipromptgenerate.xyz",
-    "logo": "https://www.aipromptgenerate.xyz/logo-icon.png",
+    "url": "https://aipromptgenerate.xyz",
+    "logo": "https://aipromptgenerate.xyz/logo-icon.png",
     "founder": {
       "@type": "Person",
       "name": "Sunil Dhital",
       "jobTitle": "Lead AI Engineer & Founder",
-      "url": "https://www.aipromptgenerate.xyz/about",
+      "url": "https://aipromptgenerate.xyz/about",
       "sameAs": [
         "https://twitter.com/dhitalsunil",
         "https://github.com/dhitalsunil"

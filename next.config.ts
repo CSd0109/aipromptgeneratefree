@@ -34,7 +34,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Content-Type",
-            value: "text/xml; charset=utf-8",
+            value: "application/xml; charset=utf-8",
           },
           {
             key: "X-Content-Type-Options",

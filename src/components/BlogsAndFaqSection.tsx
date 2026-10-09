@@ -110,7 +110,7 @@ export function BlogsAndFaqSection() {
             </div>
           </div>
           <div className="px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold font-mono self-start sm:self-auto">
-            Showing {displayedBlogs.length} of {ALL_BLOGS.length.toLocaleString()} Articles
+            Showing {displayedBlogs.length} of 3,000+ Research Guides
           </div>
         </div>
 
@@ -183,7 +183,7 @@ export function BlogsAndFaqSection() {
             </div>
           </div>
           <div className="px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold font-mono self-start sm:self-auto">
-            {displayedFaqs.length} of {ALL_FAQS.length.toLocaleString()} Verified FAQs
+            Showing {displayedFaqs.length} of 10,000+ Verified FAQs
           </div>
         </div>
 

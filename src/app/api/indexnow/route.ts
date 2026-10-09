@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const INDEXNOW_KEY = "b8730646c9fdcfa77d34962d3ef0096c";
-const HOST = "www.aipromptgenerate.xyz";
+const HOST = "aipromptgenerate.xyz";
 
 export async function POST(req: NextRequest) {
   try {

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aipromptgenerate.xyz";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aipromptgenerate.xyz";
   const canonicalUrl = `${siteUrl}/prompt/${prompt.id}`;
 
   const cleanTitle = `${prompt.title} – Free ${prompt.model} AI Prompt`;
@@ -78,7 +78,7 @@ export default async function PromptDetailPage({ params }: Props) {
     notFound();
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aipromptgenerate.xyz";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aipromptgenerate.xyz";
 
   // Related prompts
   const related = SAMPLE_PROMPTS.filter(

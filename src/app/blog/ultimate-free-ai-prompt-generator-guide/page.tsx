@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Master prompt engineering for Midjourney v6.1, Flux 1.1 Pro, ChatGPT-4o, and Sora. Learn how to reverse-engineer prompts from images, craft viral couple portraits, and generate high-fidelity AI art for free without login.",
   alternates: {
-    canonical: "https://www.aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide",
+    canonical: "https://aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide",
   },
   robots: {
     index: true,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "article",
     title: "The Ultimate Free AI Prompt Generator Guide (2026): Midjourney, Flux & ChatGPT",
     description: "Comprehensive blueprint for crafting master AI prompts, reverse-engineering images, and utilizing zero-login AI generation tools.",
-    url: "https://www.aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide",
+    url: "https://aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide",
     siteName: "AI Prompt Generate",
     publishedTime: "2026-09-24T00:00:00.000Z",
     authors: ["Sunil Dhital", "AIPromptGenerate Research Team"],
@@ -45,33 +45,33 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Article",
-      "@id": "https://www.aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide#article",
+      "@id": "https://aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide#article",
       "isPartOf": {
         "@type": "WebPage",
-        "@id": "https://www.aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide"
+        "@id": "https://aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide"
       },
       "headline": "The Ultimate Free AI Prompt Generator Guide (2026): Midjourney, Flux & ChatGPT",
       "description": "Master prompt engineering for Midjourney v6.1, Flux 1.1 Pro, ChatGPT-4o, and Sora with free tools.",
-      "image": "https://www.aipromptgenerate.xyz/top1_free_ai_studio.jpg",
+      "image": "https://aipromptgenerate.xyz/top1_free_ai_studio.jpg",
       "datePublished": "2026-09-24T00:00:00.000Z",
       "dateModified": "2026-09-24T12:00:00.000Z",
       "author": {
         "@type": "Person",
         "name": "Sunil Dhital",
-        "url": "https://www.aipromptgenerate.xyz"
+        "url": "https://aipromptgenerate.xyz"
       },
       "publisher": {
         "@type": "Organization",
         "name": "AI Prompt Generate",
-        "url": "https://www.aipromptgenerate.xyz",
+        "url": "https://aipromptgenerate.xyz",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.aipromptgenerate.xyz/favicon-32x32.png"
+          "url": "https://aipromptgenerate.xyz/favicon-32x32.png"
         }
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://www.aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide"
+        "@id": "https://aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide"
       }
     },
     {
@@ -81,19 +81,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.aipromptgenerate.xyz/"
+          "item": "https://aipromptgenerate.xyz/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://www.aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide"
+          "item": "https://aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide"
         }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide#faq",
+      "@id": "https://aipromptgenerate.xyz/blog/ultimate-free-ai-prompt-generator-guide#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -336,7 +336,7 @@ export default function UltimatePromptGuidePage() {
         {/* Backlinks */}
         <footer className="pt-8 border-t border-slate-200 text-center text-xs text-slate-500 space-y-2">
           <p>
-            Originally published at <Link href="https://www.aipromptgenerate.xyz" className="text-[#8054ff] underline">aipromptgenerate.xyz</Link> • Written by Sunil Dhital
+            Originally published at <Link href="https://aipromptgenerate.xyz" className="text-[#8054ff] underline">aipromptgenerate.xyz</Link> • Written by Sunil Dhital
           </p>
           <div className="flex items-center justify-center gap-3 font-semibold text-slate-600">
             <Link href="/" className="hover:text-[#8054ff]">AI Prompt Generator</Link>
